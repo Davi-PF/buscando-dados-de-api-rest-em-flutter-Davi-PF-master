@@ -1,7 +1,7 @@
 import 'package:geolocator/geolocator.dart';
 
 class Location{
-  double? latitude, longitude;
+  late double latitude, longitude;
 
   Future<void> checkLocationPermission() async {
     bool serviceEnabled;
@@ -26,7 +26,7 @@ class Location{
     }
   }
 
-  Future<void> getCurrentLocation() async {
+  Future<void> getCurrentPosition() async {
 
     await checkLocationPermission();
 
@@ -34,6 +34,6 @@ class Location{
     latitude = position.latitude;
     longitude = position.longitude;
 
-    print("Latitude: " + latitude.toString() + "\nLongitude: " + longitude.toString());
+    //print("Latitude: " + latitude.toString() + "\nLongitude: " + longitude.toString());
   }
 }
